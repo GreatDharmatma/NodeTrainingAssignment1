@@ -1,0 +1,24 @@
+{
+  "name": "assignment1",
+  "version": "1.0.0",
+  "description": "Basic Login and Logout + Calculator",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GreatDharmatma/NodeTrainingAssignment1.git"
+  },
+  "author": "Ajitem Sahasrabuddhe",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GreatDharmatma/NodeTrainingAssignment1/issues"
+  },
+  "homepage": "https://github.com/GreatDharmatma/NodeTrainingAssignment1#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0"
+  }
+}
