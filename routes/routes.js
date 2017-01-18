@@ -1,5 +1,6 @@
 var path = require('path'),
-	session = require('express-session');
+	session = require('express-session'),
+	expressions = require('angular-expressions');
 
 module.exports = function(app) {
 	app.get('/', function (req, res) {
@@ -61,6 +62,19 @@ module.exports = function(app) {
 	});
 
 	app.get('/calculator', function(req, res){
-		res.sendFile(path.join(app.settings.public, '/calculator.html'));
+		var loggedin = false;
+		if( req.session.loggedin ) {
+			loggedin = true;
+		} 
+		res.render('calculator',
+			{ title : 'Expression Calculator', loggedin: loggedin }
+		);
+	});
+
+	app.post('/evaluate', function(req, res){
+		var exp = req.body.expression;
+		console.log(exp);
+		var evaluate = expressions.compile(exp);
+		res.send(200,evaluate());
 	});
 }

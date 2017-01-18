@@ -1,0 +1,29 @@
+extends layouts/mainlayout.pug
+block content
+	.container-fluid
+		.jumbotron
+			h1 Expression Calculator
+			
+			.row
+				.col-md-6
+					h3 Enter Expression
+					input(type="text" id="exp")
+					button(id="evaluate") Evaluate
+				.col-md-6
+					h3 Result
+					input(type="text" id="result" readonly)
+	script.
+		$(document).ready(function(){
+			$('#evaluate').on('click', function(e){
+				$.ajax({
+					url: '/evaluate',
+					data: {
+						expression: $('#exp').val(),
+					},
+					type: 'POST',
+					success: function(data) {
+						$('#result').val(data);
+					}
+				});
+			});
+		});

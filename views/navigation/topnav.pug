@@ -13,6 +13,7 @@ include ../includes/functions.pug
 				if loggedin
 					+menuitem('Logout', '/logout')
 					+menuitem('Welcome', '/welcome', (title == 'Welcome'))
+					+menuitem('Expression Calculator', '/calculator', (title == 'Expression Calculator'))
 				else
 					+menuitem('Home', '/', (title == 'Home'))
 					+menuitem('About', '/about', (title == 'About Us'))
