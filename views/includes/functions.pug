@@ -1,0 +1,5 @@
+mixin menuitem(name,link,active)
+	if active
+		li.nav-item.active: a.nav-link(href= link)= name
+	else
+		li.nav-item: a.nav-link(href= link)= name
